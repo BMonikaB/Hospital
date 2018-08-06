@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xml:th="http://www.thymeleaf.org" xmlns:th="http://www.springframework.org/schema/jdbc">
+
+<head>
+    <title>dodawanie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+</head>
+
+
+<body class="container">
+<table class="table">
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Imie</td>
+        <td>Nazwisko</td>
+        <td>Numer Pesel</td>
+        <td>Miasto</td>
+        <td>Ulica</td>
+        <td>Numer domu</td>
+        <td>Usun</td>
+        <td>Dodaj lekarza</td>
+    </tr>
+    </thead>
+    <tbody th:each=" patient : ${patients}">
+    <tr>
+        <td th:text="${patient.id}"></td>
+        <td th:text="${patient.name}"></td>
+        <td th:text="${patient.lastName}"></td>
+        <td th:text="${patient.pesel}"></td>
+        <td th:text="${patient.city}"></td>
+        <td th:text="${patient.street}"></td>
+        <td th:text="${patient.houseNumber}"></td>
+        <td
+        <td><a th:href="${'/patient/delete/'+patient.id}">Usun</a></td>
+    </tr>
+    </tbody>
+
+</table>
+<div class="row">
+    <a href="/createpatient" class="btn btn-secondary btn-lg btn-block btn-sm" role="button">Dodaj pacjenta</a>
+</div>
+
+</body>
+
+
+</html>

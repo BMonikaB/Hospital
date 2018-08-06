@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xml:th="http://www.thymeleaf.org" xmlns:th="http://www.springframework.org/schema/jdbc">
+
+<head>
+    <title>dodawanie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"/>
+
+    <script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+</head>
+<body class="container">
+<form class="form-horizontal" th:option="${description}"  th:action="@{/description}" th:method="post">
+
+    <div class="form-group">
+    <label class="control-label">Podaj zadanie</label>
+        <input th:type="text" th:class="form-control" th:field="*{description.description}">
+    </div>
+
+    <div class="row">
+        <button type="submit" class="btn btn-primary">Dodaj zadanie</button>
+    </div>
+</form>
+</body>
+
+
+</html>
